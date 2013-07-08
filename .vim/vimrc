@@ -1,0 +1,38 @@
+
+set nocompatible
+set backspace=indent,eol,start
+set modelines=0
+set hidden
+
+set nohlsearch
+set incsearch
+
+set autoindent
+set smartindent
+set smarttab
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set expandtab
+
+set ruler
+set nonumber
+set showmode
+set scrolloff=8
+
+set viminfo=""
+set noswapfile
+set nobackup
+set nowb
+
+syntax on
+colorscheme desert
+
+"// basic skeleton for new html files
+augroup html
+   au BufNewFile *.html 0r ~/.vim/skel/html.skel
+augroup end
+
+"// make vim recognize .md as markdown
+au BufRead,BufNewFile *.md set filetype=markdown
+

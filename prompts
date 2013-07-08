@@ -1,0 +1,17 @@
+# just a few prompts I'd like to not forget
+
+# blue (user), red (root) background
+if [[ ${EUID} == 0 ]]; then
+    PS1="$(if [[ -n $STY ]]; then echo ':'; fi)\[\e[1;41;97m\] \u\[\e[0;41;97m\]:\w \[\e[0m\] "
+else
+    PS1="$(if [[ -n $STY ]]; then echo ':'; fi)\[\e[44;96m\] \u:\[\e[44;37m\]\w \[\e[0m\] "
+fi
+
+# green (user), red (root) foreground
+if [[ ${EUID} == 0 ]]; then
+    PS1="\[\e[0;91m\]\h\[\e[0;31m\]:\w \$\[\e[00m\]"
+else
+    PS1="\[\e[0;92m\]\h\[\e[0;32m\]:\w \$\[\e[00m\]"
+fi
+
+
