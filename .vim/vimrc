@@ -33,6 +33,12 @@ augroup html
    au BufNewFile *.html 0r ~/.vim/skel/html.skel
 augroup end
 
+"// and for new markdown files
+augroup md
+	au bufNewFile *.md 0r ~/.vim/skel/md.skel
+augroup end
+
 "// make vim recognize .md as markdown
 au BufRead,BufNewFile *.md set filetype=markdown
+
 
