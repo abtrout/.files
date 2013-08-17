@@ -6,10 +6,9 @@ set hidden
 
 set nohlsearch
 set incsearch
+set laststatus=2
 
 set autoindent
-"// set smartindent
-"// set smarttab
 set tabstop=2
 set softtabstop=2
 set shiftwidth=2
@@ -25,8 +24,10 @@ set noswapfile
 set nobackup
 set nowb
 
+set encoding=utf-8
+set t_Co=256
 syntax on
-colorscheme molokai 
+colorscheme molokai
 
 "// basic skeleton for new html files
 augroup html
@@ -35,10 +36,18 @@ augroup end
 
 "// and for new markdown files
 augroup md
-	au bufNewFile *.md 0r ~/.vim/skel/md.skel
+  au bufNewFile *.md 0r ~/.vim/skel/md.skel
 augroup end
 
 "// make vim recognize .md as markdown
 au BufRead,BufNewFile *.md set filetype=markdown
 
-
+let g:airline_detect_paste=1
+let g:airline_theme='molokai'
+let g:airline_left_sep = '⮀'
+let g:airline_left_alt_sep = '⮁'
+let g:airline_right_sep = '⮂'
+let g:airline_right_alt_sep = '⮃'
+let g:airline_branch_prefix = '⭠'
+let g:airline_readonly_symbol = '⭤'
+let g:airline_linecolumn_prefix = '⭡'
