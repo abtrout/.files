@@ -1,20 +1,15 @@
 
-"// i go back and forth about typeface 
-set guifont=Envy\ Code\ R:h13
-"// set guifont=Andale\ Mono:h12
-"// set noantialias
+"// set guifont=Envy\ Code\ R:h13 
+set guifont=Andale\ Mono:h12
+set noantialias
 set lines=40 columns=90
-set nowrap
+set wrap
 
 set guioptions-=T
 set guioptions-=L
 set guioptions-=e
 set guioptions-=r
-set showtabline=2
 
 set noruler
 set number
-
-"// no, i don't like solarized
-colorscheme wombat
 

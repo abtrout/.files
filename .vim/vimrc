@@ -26,7 +26,7 @@ set nobackup
 set nowb
 
 syntax on
-colorscheme desert
+colorscheme molokai 
 
 "// basic skeleton for new html files
 augroup html
