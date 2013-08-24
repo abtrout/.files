@@ -43,8 +43,9 @@ augroup end
 "// make vim recognize .md as markdown
 au BufRead,BufNewFile *.md set filetype=markdown
 
-let g:airline_detect_paste=1
-let g:airline_theme='molokai'
+"// uncomment if using vim-airline.
+"let g:airline_detect_paste=1
+"let g:airline_theme='molokai'
 "let g:airline_left_sep = '⮀'
 "let g:airline_left_alt_sep = '⮁'
 "let g:airline_right_sep = '⮂'
