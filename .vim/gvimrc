@@ -1,7 +1,7 @@
 
-"// set guifont=Envy\ Code\ R:h13 
-set guifont=Andale\ Mono:h12
-set noantialias
+set guifont=Envy\ Code\ R\ for\ Powerline:h13 
+"//set guifont=Andale\ Mono:h12
+"//set noantialias
 set lines=40 columns=90
 set wrap
 
