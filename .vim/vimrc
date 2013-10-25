@@ -16,7 +16,7 @@ set expandtab
 
 set ruler
 set nonumber
-set nowrap
+set wrap
 set showmode
 set scrolloff=8
 
@@ -42,15 +42,4 @@ augroup end
 
 "// make vim recognize .md as markdown
 au BufRead,BufNewFile *.md set filetype=markdown
-
-"// uncomment if using vim-airline.
-"let g:airline_detect_paste=1
-"let g:airline_theme='molokai'
-"let g:airline_left_sep = '⮀'
-"let g:airline_left_alt_sep = '⮁'
-"let g:airline_right_sep = '⮂'
-"let g:airline_right_alt_sep = '⮃'
-"let g:airline_branch_prefix = '⭠'
-"let g:airline_readonly_symbol = '⭤'
-"let g:airline_linecolumn_prefix = '⭡'
 
