@@ -28,6 +28,7 @@ set nowb
 set encoding=utf-8
 set t_Co=256
 syntax on
+colorscheme molokai
 
 augroup html
    au BufNewFile *.html 0r ~/.vim/skel/html.skel

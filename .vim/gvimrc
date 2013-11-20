@@ -12,5 +12,3 @@ set noruler
 set nowrap
 set number
 
-colorscheme molokai
-
