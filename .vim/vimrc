@@ -28,18 +28,18 @@ set nowb
 set encoding=utf-8
 set t_Co=256
 syntax on
-colorscheme molokai
 
-"// basic skeleton for new html files
 augroup html
    au BufNewFile *.html 0r ~/.vim/skel/html.skel
 augroup end
 
-"// ..and for new css files
 augroup css 
   au bufNewFile *.css 0r ~/.vim/skel/css.skel
 augroup end
 
-"// make vim recognize .md as markdown
 au BufRead,BufNewFile *.md set filetype=markdown
+
+au BufRead,BufNewFile *.scala set filetype=scala
+au BufRead,BufNewFile *.sbt set filetype=sbt
+
 

@@ -2,7 +2,6 @@
 set guifont=Andale\ Mono:h12
 set noantialias
 set lines=40 columns=90
-set nowrap
 
 set guioptions-=T
 set guioptions-=L
@@ -10,5 +9,8 @@ set guioptions-=e
 set guioptions-=r
 
 set noruler
+set nowrap
 set number
+
+colorscheme molokai
 
