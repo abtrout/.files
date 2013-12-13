@@ -30,6 +30,9 @@ set t_Co=256
 syntax on
 colorscheme molokai
 
+map <C-p> :tabprev<CR>
+map <C-n> :tabnext<CR>
+
 augroup html
    au BufNewFile *.html 0r ~/.vim/skel/html.skel
 augroup end
