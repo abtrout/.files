@@ -16,7 +16,6 @@ set expandtab
 
 set ruler
 set nonumber
-set wrap
 set showmode
 set scrolloff=8
 

@@ -9,6 +9,5 @@ set guioptions-=e
 set guioptions-=r
 
 set noruler
-set nowrap
 set number
 
