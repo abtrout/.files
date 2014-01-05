@@ -1,0 +1,49 @@
+
+set nocompatible
+set backspace=indent,eol,start
+set modelines=0
+set hidden
+
+set nowrap
+set nohlsearch
+set incsearch
+set laststatus=2
+
+set autoindent
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
+set expandtab
+
+set ruler
+set nonumber
+set showmode
+set scrolloff=8
+
+set viminfo=""
+set noswapfile
+set nobackup
+set nowb
+
+set encoding=utf-8
+set t_Co=256
+syntax on
+colorscheme molokai
+
+map <C-p> :tabprev<CR>
+map <C-n> :tabnext<CR>
+
+augroup html
+   au BufNewFile *.html 0r ~/.vim/skel/html.skel
+augroup end
+
+augroup css 
+  au bufNewFile *.css 0r ~/.vim/skel/css.skel
+augroup end
+
+au BufRead,BufNewFile *.md set filetype=markdown
+
+au BufRead,BufNewFile *.scala set filetype=scala
+au BufRead,BufNewFile *.sbt set filetype=sbt
+
+
