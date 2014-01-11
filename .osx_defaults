@@ -9,7 +9,7 @@
 chflags hidden ~/Public ~/Desktop ~/Library
 
 # Disable the sound effects on boot
-sudo nvram SystemAudioVolume=" "
+# sudo nvram SystemAudioVolume=" "
 
 scutil --set ComputerName miette
 scutil --set HostName miette
