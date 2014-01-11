@@ -7,7 +7,7 @@ set hidden
 set nowrap
 set nohlsearch
 set incsearch
-set laststatus=2
+set laststatus=0
 
 set autoindent
 set tabstop=2
@@ -45,7 +45,6 @@ au BufRead,BufNewFile *.md set filetype=markdown
 au BufRead,BufNewFile *.scala set filetype=scala
 au BufRead,BufNewFile *.sbt set filetype=sbt
 
-" highlight trailing whitespace.
 hi TrailingWhitespace ctermbg=234 guibg=234
 match TrailingWhitespace /\s\+$/
 
