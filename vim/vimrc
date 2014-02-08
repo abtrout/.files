@@ -26,7 +26,7 @@ set nobackup
 set nowb
 
 set encoding=utf-8
-set t_Co=256
+" set t_Co=256
 syntax on
 colorscheme molokai
 
@@ -45,6 +45,6 @@ au BufRead,BufNewFile *.md set filetype=markdown
 au BufRead,BufNewFile *.scala set filetype=scala
 au BufRead,BufNewFile *.sbt set filetype=sbt
 
-hi TrailingWhitespace ctermbg=234 guibg=234
-match TrailingWhitespace /\s\+$/
+" hi TrailingWhitespace ctermbg=234 guibg=234
+" match TrailingWhitespace /\s\+$/
 
