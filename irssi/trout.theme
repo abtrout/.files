@@ -45,7 +45,7 @@ abstracts = {
   mode = "{comment $*}";
 
   # highlighted nick/host is printed (joins)
-  channick_hilight = "%C$*%n";
+  channick_hilight = "%W$*%n";
   chanhost_hilight = "{nickhost %c$*%n}";
 
   # nick/host is printed (parts, quits, etc.)
@@ -65,7 +65,7 @@ abstracts = {
   pubmsgnick = "{msgnick $*}";
   pubnick = "%_%W$*%n";
   pubmsghinick = "{msgnick $*}";
-  menick = "%_%R$*%n";
+  menick = "%_%W$*%n %c│%n %|";
   ownprivmsgnick = "%K$*%n %c│%n %|";
   privmsgnick = "%_%W$*%n %c│%n %|";
   # inline /msg
@@ -79,7 +79,7 @@ abstracts = {
   ##
 
   # used internally by this theme
-  action_core = "%_ * $*%n";
+  action_core = "          %c│%n %_$*%n";
 
   # generic one that's used by most actions
   action = "{action_core $*} ";
@@ -154,7 +154,7 @@ abstracts = {
   sb_background = "%9%K";
   # text at the beginning of statusbars. sb-item already puts
   # space there,so we don't use anything by default.
-  sbstart = "          %_%C╤%n"; # for some reason this was bold by default, so we disabled it.
+  sbstart = "          %_%c╤%n"; # for some reason this was bold by default, so we disabled it.
   # text at the end of statusbars. Use space so that it's never
   # used for anything.
   sbend = "";
@@ -162,7 +162,7 @@ abstracts = {
   topicsbstart = "{sbstart $*}";
   topicsbend = "{sbend $*}";
 
-  prompt = "          %C╧%n ";
+  prompt = "          $_%c╧$_%n ";
 
   sb = " %n$*%n";
   sbaway = " %CzZzZ%n";
@@ -182,27 +182,27 @@ abstracts = {
 };
 
 formats = {
-
   "fe-common/core" = {
-
     pubmsg = "{pubmsgnick $2 {pubnick $[-9]0}}$1%|";
+
     own_msg = "{ownmsgnick $2 {ownnick $[-9]0}}$1%|";
     own_msg_channel = "{ownmsgnick $3 {ownnick $0}{msgchannel $1}}$2";
     own_msg_private_query = "{ownprivmsgnick {ownprivnick $[-9]2}}$1";
+
     pubmsg_me = "{menick $[-9]0}$1";
     pubmsg_me_channel = "{pubmsghinick $3 {menick $[-9]0}{msgchannel $1}}$2";
     pubmsg_hilight = "{pubmsghinick $3 {menick $[-9]1}} %c│ $2";
     pubmsg_hilight_channel = "{pubmsghinick $0 $[-9]$4{msgchannel $2}}$3";
     pubmsg_channel = "{pubmsgnick {pubnick %G$[-9]0}$2}$1";
+
     msg_private_query = "{privmsgnick $[-9]0}$2";
 
-    join = "     join %g│%n {channick $0}";
-    part = "     part %y│%n {channick $0}";
-    quit = "     quit %M│%n {channick $0}";
+    join = "     %kjoin %c│%n {channick $0}";
+    part = "     %kpart %c│%n {channick $0}";
+    quit = "     %kquit %c│%n {channick $0}";
 
-    away = "";
-    unaway = "";
-    nick_away = "{nick $0} is away.";
+    your_nick_changed = "          %c│%n you are now known as {channick_hilight $1}";
+    nick_changed = "          %c│%n {channick $0} is now known as {channick_hilight $1}";
 
     query_start = "";
     query_stop = "";
@@ -211,5 +211,9 @@ formats = {
     line_start_irssi = "{line_start}";
   };
 
+  "fe-common/irc" = {
+    away = "";
+    unaway = "";
+    nick_away = "          %c│%n {nick $0} is away.";
+  }
 };
-
