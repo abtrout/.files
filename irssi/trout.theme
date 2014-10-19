@@ -201,7 +201,7 @@ formats = {
     part = "     %kpart %c│%n {channick $0}";
     quit = "     %kquit %c│%n {channick $0}";
 
-    your_nick_changed = "          %c│%n you are now known as {channick_hilight $1}";
+    your_nick_changed = "          %c│%n You are now known as {channick_hilight $1}";
     nick_changed = "          %c│%n {channick $0} is now known as {channick_hilight $1}";
 
     query_start = "";
