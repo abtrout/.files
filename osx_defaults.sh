@@ -13,7 +13,7 @@ if [[ $# -eq 1 ]]; then
 fi
 
 # Disable the sound effects on boot
-sudo nvram SystemAudioVolume=" "
+#sudo nvram SystemAudioVolume=" "
 
 # Skip verifying disk images.
 defaults write com.apple.frameworks.DiskImages skip-verify -bool true
@@ -39,12 +39,12 @@ defaults write com.apple.LaunchServices LSQuarantine -bool false
 defaults write com.apple.DesktopServices DSDontWriteNetworkStores -bool true
 
 # Speed up Save sheet animations
-defaults write -g NSWindowResizeTime -float 0.1337
+defaults write -g NSWindowResizeTime -float 0
 defaults write -g NSNavPanelExpandedStateForSaveMode -bool true
 defaults write -g NSNavPanelExpandedStateForSaveMode2 -bool true
 
 # Speed up mission control animations
-defaults write com.apple.Dock expose-animation-duration -float 0.1337
+defaults write com.apple.Dock expose-animation-duration -float 0
 
 # Disable smart quotes, smart dashes, and automatic spelling correction
 defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
@@ -86,5 +86,5 @@ sudo mdutil -i on / > /dev/null
 sudo mdutil -E / > /dev/null
 
 ## Disable Launchpad fade-in animation
-#defaults write com.apple.dock springboard-show-duration -int 0
-#defaults write com.apple.dock springboard-hide-duration -int 0
+defaults write com.apple.dock springboard-show-duration -int 0
+defaults write com.apple.dock springboard-hide-duration -int 0
