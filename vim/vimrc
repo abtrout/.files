@@ -1,34 +1,23 @@
-
 set nocompatible
-set backspace=indent,eol,start
-set modelines=0
-set hidden
 
-set nowrap
-set nohlsearch
+set backspace=indent,eol,start
+set encoding=utf-8
+set hidden
 set incsearch
 set laststatus=0
-
-set autoindent
-set tabstop=2
-set softtabstop=2
-set shiftwidth=2
-set expandtab
-
-set ruler
-set nonumber
-set showmode
-set scrolloff=8
-
-set viminfo=""
-set noswapfile
+set modelines=0
 set nobackup
+set nohlsearch
+set noswapfile
 set nowb
+set nowrap
+set number
+set ruler
+set scrolloff=8
+set viminfo=""
 
-set encoding=utf-8
-" set t_Co=256
-syntax on
 colorscheme molokai
+syntax on
 
 map <C-p> :tabprev<CR>
 map <C-n> :tabnext<CR>
@@ -41,11 +30,16 @@ augroup css
   au BufNewFile *.css 0r ~/.vim/skel/css.skel
 augroup end
 
-au BufRead,BufNewFile *.md    set filetype=markdown
+au BufRead,BufNewFile *.go set filetype=go
+au BufRead,BufNewFile *.md set filetype=markdown
+au BufRead,BufNewFile *.sbt set filetype=sbt
 au BufRead,BufNewFile *.scala set filetype=scala
-au BufRead,BufNewFile *.sbt   set filetype=sbt
-au BufRead,BufNewFile *.go    set filetype=go
 
-" hi TrailingWhitespace ctermbg=234 guibg=234
-" match TrailingWhitespace /\s\+$/
+" default sensible behavior
+set ts=2 sts=2 sw=2 tw=0 et ai
 
+" language specific overrides
+au FileType go setlocal ts=4 sts=4 sw=4 tw=0 noet ai
+au FileType javascript setlocal ts=2 sts=2 sw=2 tw=80 et ai
+au FileType python setlocal ts=4 sts=4 sw=4 tw=80 et ai
+au FileType scala setlocal ts=2 sts=2 sw=2 tw=80 et ai
