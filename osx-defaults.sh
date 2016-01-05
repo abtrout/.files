@@ -74,3 +74,4 @@ defaults write com.apple.dock springboard-hide-duration -int 0
 
 # Disable bash sessions
 touch ~/.bash_sessions_disable
+rm -rf ~/.bash_sessions
