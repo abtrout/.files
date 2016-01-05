@@ -12,9 +12,6 @@ if [[ $# -eq 1 ]]; then
   sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "$1"
 fi
 
-# Disable the sound effects on boot
-#sudo nvram SystemAudioVolume=" "
-
 # Skip verifying disk images.
 defaults write com.apple.frameworks.DiskImages skip-verify -bool true
 defaults write com.apple.frameworks.DiskImages skip-verify-locked -bool true
@@ -23,11 +20,6 @@ defaults write com.apple.frameworks.DiskImages skip-verify-remote -bool true
 # Don't ask to use Time Machine and disable local backups.
 defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
 hash tmutil &> /dev/null && sudo tmutil disablelocal
-
-## Disable Safari webpage previews and enabled Debug menu. 
-#chflags uchg ~/Library/Caches/com.apple.Safari/Webpage\ Previews/
-#defaults write com.apple.Safari DebugSnapshotsUpdatePolicy -int 2
-#defaults write com.apple.Safari IncludeInternalDebugMenu -bool true
 
 # Disable the warning when changing a file extension
 defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
@@ -54,18 +46,12 @@ defaults write -g NSAutomaticSpellingCorrectionEnabled -bool false
 # Disable new window pop-in animation
 defaults write -g NSAutomaticWindowAnimationsEnabled -bool NO
 
-# Better (IMO) font smoothing
-defaults write -g AppleFontSmoothing -int 1
-
-# Make the dock slightly more transparent
-defaults write com.apple.dock hide-mirror -bool true
-
 defaults write com.apple.Dock autohide-delay -float 0
 defaults write -g NSScrollViewRubberbanding -int 0
 defaults write -g ApplePressAndHoldEnabled -bool false 
 
 # Disable Notification Center 
-launchctl unload -w /System/Library/LaunchAgents/com.apple.notificationcenterui.plist
+#launchctl unload -w /System/Library/LaunchAgents/com.apple.notificationcenterui.plist
 
 # Disable Spotlight indexing for external volumes
 sudo defaults write /.Spotlight-V100/VolumeConfiguration Exclusions -array "/Volumes"
@@ -75,9 +61,6 @@ defaults write com.apple.spotlight orderedItems -array \
   '{"enabled" = 1;"name" = "APPLICATIONS";}' \
   '{"enabled" = 1;"name" = "SYSTEM_PREFS";}' \
   '{"enabled" = 1;"name" = "DIRECTORIES";}' \
-  '{"enabled" = 1;"name" = "PDF";}' \
-  '{"enabled" = 0;"name" = "DOCUMENTS";}' \
-  '{"enabled" = 0;"name" = "MESSAGES";}' \
   '{"enabled" = 0;"name" = "BOOKMARKS";}'
 
 # Reload Spotlight and rebuild indexes
@@ -88,3 +71,6 @@ sudo mdutil -E / > /dev/null
 ## Disable Launchpad fade-in animation
 defaults write com.apple.dock springboard-show-duration -int 0
 defaults write com.apple.dock springboard-hide-duration -int 0
+
+# Disable bash sessions
+touch ~/.bash_sessions_disable
