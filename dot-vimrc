@@ -13,11 +13,11 @@ set nowb
 set nowrap
 set number
 set ruler
-set scrolloff=8
+set scrolloff=3
 set viminfo=""
 
-colorscheme molokai
 syntax on
+colorscheme vimbrant
 
 map <C-p> :tabprev<CR>
 map <C-n> :tabnext<CR>
