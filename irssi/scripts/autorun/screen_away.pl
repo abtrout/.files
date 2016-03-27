@@ -170,8 +170,8 @@ sub screen_away {
         # if length of window is greater then 0, make this window active
         Irssi::command('window goto ' . Irssi::settings_get_str($IRSSI{'name'} . '_window'));
       }
-      Irssi::printformat(MSGLEVEL_CLIENTCRAP, 'screen_away_crap',
-        "Set away");
+      #Irssi::printformat(MSGLEVEL_CLIENTCRAP, 'screen_away_crap',
+      #  "Set away");
       my $message = Irssi::settings_get_str($IRSSI{'name'} . '_message');
       if (length($message) == 0) {
         # we have to set a message or we wouldnt go away
@@ -200,8 +200,8 @@ sub screen_away {
       $away_status = $away;
     } elsif ($away == 2 and $away_status != 2) {
       # unset away
-      Irssi::printformat(MSGLEVEL_CLIENTCRAP, 'screen_away_crap',
-        "Reset away");
+      #Irssi::printformat(MSGLEVEL_CLIENTCRAP, 'screen_away_crap',
+      #  "Reset away");
       my ($server);
       foreach $server (Irssi::servers()) {
         if ($away{$server->{'tag'}} == 1) {

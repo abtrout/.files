@@ -75,7 +75,6 @@ statusbar = {
       items = {
         barstart = { priority = "100"; };
         awl_0 = { };
-        user = { alignment = "right"; };
         barend = { priority = "100"; alignment = "right"; };
       };
     };
@@ -118,6 +117,4 @@ settings = {
   };
 };
 
-ignores = (
-  { level = "MODES"; channels = ( "&bitlbee" ); }
-);
+ignores = ( { level = "MODES"; channels = ( "&bitlbee" ); } );
