@@ -1,14 +1,17 @@
 #!/usr/bin/env bash
 
-rm -rf ~/.{bash_profile,bashrc,inputrc,tmux.conf,vim,vimrc}
+# Prompt before removing existing files
+rm -ri ~/.{bash_profile,bashrc,inputrc,tmux.conf,vim,vimrc}
 
-# Our ~/.bash_profile will change depending on host OS.
-# Instead of linking it, we copy it.
-cp dot-bash_profile ~/.bash_profile
+ln -s $PWD/shell/.bashrc ~/.bashrc
+ln -s $PWD/shell/.inputrc ~/.inputrc
 
-# Everything else gets linked to track (infrequent) changes.
-ln -s $PWD/dot-bashrc ~/.bashrc
-ln -s $PWD/dot-inputrc ~/.inputrc
-ln -s $PWD/dot-tmux.conf ~/.tmux.conf
+# Terminal.app starts a login shell, so settings need to
+# be manually sourced from ~/.bashrc
+if [[ $(uname) == "Darwin" ]]; then
+  ln -s $PWD/shell/.bash_profile ~/.bash_profile
+fi
+
 ln -s $PWD/vim ~/.vim
-ln -s $PWD/dot-vimrc ~/.vimrc
+ln -s $PWD/vim/.vimrc ~/.vimrc
+ln -s $PWD/tmux/.tmux.conf ~/.tmux.conf
