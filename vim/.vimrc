@@ -1,34 +1,12 @@
-set nocompatible
-
-set backspace=indent,eol,start
-set encoding=utf-8
-set hidden
-set incsearch
-set laststatus=0
-set modelines=0
-set nobackup
-set nohlsearch
-set noswapfile
-set nowb
-set nowrap
-set number
-set ruler
-set scrolloff=3
-set viminfo=""
+execute pathogen#infect()
 
 syntax on
-colorscheme vimbrant
+colorscheme default
+
+set background=dark
 
 map <C-p> :tabprev<CR>
 map <C-n> :tabnext<CR>
-
-augroup html
-   au BufNewFile *.html 0r ~/.vim/skel/html.skel
-augroup end
-
-augroup css
-  au BufNewFile *.css 0r ~/.vim/skel/css.skel
-augroup end
 
 au BufRead,BufNewFile *.go set filetype=go
 au BufRead,BufNewFile *.md set filetype=markdown
