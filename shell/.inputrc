@@ -1,2 +1,11 @@
+# Use vi style line editing commands.
 set editing-mode vi
+# And start in INSERT mode!
 set keymap vi-insert
+
+# Bash/tab completion configuration improvements.
+set completion-ignore-case on
+set colored-completion-prefix on
+set colored-stats on
+set match-hidden-files off
+set visible-stats on
