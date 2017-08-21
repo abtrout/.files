@@ -4,6 +4,7 @@ syntax on
 colorscheme default
 
 set background=dark
+set laststatus=0
 
 map <C-p> :tabprev<CR>
 map <C-n> :tabnext<CR>
