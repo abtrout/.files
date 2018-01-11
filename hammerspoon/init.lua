@@ -1,3 +1,12 @@
+hs.audiodevice.watcher.setCallback(function (evt)
+  audioOut = hs.audiodevice.defaultOutputDevice()
+  if evt == "dOut" and audioOut ~= nil then
+      audioOut:setVolume(0)
+  end
+end)
+
+hs.audiodevice.watcher.start()
+
 local mash = { "ctrl", "cmd" }
 local padding = 17
 
