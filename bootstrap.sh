@@ -10,7 +10,6 @@ if [[ $(uname) == "Darwin" ]]; then
 fi
 
 # Everything else gets symlinked to the appropriate place
-ln -s $PWD/hammerspoon ~/.hammerspoon
 ln -s $PWD/shell/.bashrc ~/.bashrc
 ln -s $PWD/shell/.inputrc ~/.inputrc
 ln -s $PWD/tmux/.tmux.conf ~/.tmux.conf
