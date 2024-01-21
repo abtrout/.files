@@ -1,9 +1,0 @@
-[submodule "vim/pack/abtrout/start/vim-sensible"]
-	path = vim/pack/abtrout/start/vim-sensible
-	url = https://github.com/tpope/vim-sensible
-[submodule "vim/pack/abtrout/start/vim-go"]
-	path = vim/pack/abtrout/start/vim-go
-	url = https://github.com/fatih/vim-go
-[submodule "vim/pack/abtrout/start/vim-256noir"]
-	path = vim/pack/abtrout/start/vim-256noir
-	url = https://github.com/andreasvc/vim-256noir.git
