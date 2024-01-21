@@ -1,6 +1,4 @@
 syntax on
-colorscheme 256_noir
-set background=dark
 
 map <C-p> :tabprev<CR>
 map <C-n> :tabnext<CR>
